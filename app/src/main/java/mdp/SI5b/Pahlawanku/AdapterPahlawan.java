@@ -1,6 +1,7 @@
 package mdp.SI5b.Pahlawanku;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,22 @@ public class AdapterPahlawan extends RecyclerView.Adapter<AdapterPahlawan.VHPahl
                 .load(pahlawan.getFoto())
                 .centerCrop()
                 .into(holder.ivFoto);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String xNama, xTentang, xfoto;
+                xNama = pahlawan.getNama();
+                xTentang = pahlawan.getTentang();
+                xfoto = pahlawan.getFoto();
+
+                Intent kirim = new Intent(ctx, DetailActivity.class);
+                kirim.putExtra("xNama", xNama);
+                kirim.putExtra("xTentang", xTentang);
+                kirim.putExtra("xFoto", xfoto);
+                ctx.startActivity(kirim);
+            }
+        });
     }
 
     @Override
