@@ -1,6 +1,6 @@
 package mdp.SI5b.Pahlawanku;
 
-public class ModelPahlawan {
+public class ModelStasiun {
     private String nama, tentang, foto;
 
     public String getNama() {

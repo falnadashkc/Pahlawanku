@@ -2,10 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_card"
-        android:title="Tampilan Card"/>
+        android:id="@+id/menu_about"
+        android:title="About"/>
 
-    <item
-        android:id="@+id/menu_grid"
-        android:title="Tampilan Grid"/>
 </menu>

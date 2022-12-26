@@ -24,7 +24,7 @@
             android:id="@+id/tv_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Pahlawan"
+            android:text="Nama stasiun"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_toRightOf="@id/iv_foto"/>
@@ -33,7 +33,7 @@
             android:id="@+id/tv_tentang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tentang Pahlawan"
+            android:text="Tentang stasiun"
             android:layout_toRightOf="@id/iv_foto"
             android:layout_below="@id/tv_nama"
             android:maxLines="4"

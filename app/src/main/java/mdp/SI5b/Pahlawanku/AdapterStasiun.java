@@ -15,11 +15,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class AdapterPahlawan extends RecyclerView.Adapter<AdapterPahlawan.VHPahlawan> {
-    private ArrayList<ModelPahlawan> dataPahlawan;
+public class AdapterStasiun extends RecyclerView.Adapter<AdapterStasiun.VHPahlawan> {
+    private ArrayList<ModelStasiun> dataPahlawan;
     private Context ctx;
 
-    public AdapterPahlawan(ArrayList<ModelPahlawan> dataPahlawan, Context ctx) {
+    public AdapterStasiun(ArrayList<ModelStasiun> dataPahlawan, Context ctx) {
         this.dataPahlawan = dataPahlawan;
         this.ctx = ctx;
     }
@@ -33,7 +33,7 @@ public class AdapterPahlawan extends RecyclerView.Adapter<AdapterPahlawan.VHPahl
 
     @Override
     public void onBindViewHolder(@NonNull VHPahlawan holder, int position) {
-        ModelPahlawan pahlawan = dataPahlawan.get(position);
+        ModelStasiun pahlawan = dataPahlawan.get(position);
 
         holder.tvNama.setText(pahlawan.getNama());
         holder.tvTentang.setText(pahlawan.getTentang());

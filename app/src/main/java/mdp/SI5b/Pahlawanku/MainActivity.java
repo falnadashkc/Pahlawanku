@@ -2,10 +2,10 @@ package mdp.SI5b.Pahlawanku;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvPahlawan;
-    private ArrayList<ModelPahlawan> data = new ArrayList<>();
+    private ArrayList<ModelStasiun> data = new ArrayList<>();
 
 
     @Override
@@ -25,22 +25,15 @@ public class MainActivity extends AppCompatActivity {
         rvPahlawan = findViewById(R.id.rv_pahlawan);
         rvPahlawan.setHasFixedSize(true);
 
-        data.addAll(DataPahlawan.ambilDataPahlawan());
+        data.addAll(DataStasiun.ambilDataPahlawan());
         tampilDataPahlawan();
     }
 
     private void  tampilDataPahlawan(){
-        AdapterPahlawan AP = new AdapterPahlawan(data, MainActivity.this);
+        AdapterStasiun AP = new AdapterStasiun(data, MainActivity.this);
 
         rvPahlawan.setLayoutManager(new LinearLayoutManager(this));
         rvPahlawan.setAdapter(AP);
-
-    }
-    private void  tampilDataGrid() {
-        AdapterGrid AG = new AdapterGrid(data, MainActivity.this);
-
-        rvPahlawan.setLayoutManager(new GridLayoutManager(this, 2));
-        rvPahlawan.setAdapter(AG);
     }
 
     @Override
@@ -51,13 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_card:
-                tampilDataPahlawan();
-                break;
-            case R.id.menu_grid:
-                tampilDataGrid();
-                break;
+        int id = item.getItemId();
+
+        if (id == R.id.menu_about){
+            Intent about = new Intent(MainActivity.this, About.class);
+            startActivity(about);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
