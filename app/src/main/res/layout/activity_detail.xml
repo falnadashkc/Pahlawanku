@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    android:background="#03fcd3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
             android:layout_height="wrap_content"
             android:text="Nama Stasiun"
             android:padding="6dp"
-            style="@style/TextAppearance.AppCompat.Large"/>
+            style="@style/TextAppearance.AppCompat.Large"
+            />
 
         <TextView
             android:id="@+id/tv_tentang"
@@ -34,6 +36,30 @@
             android:padding="6dp"
             android:justificationMode="inter_word"
             style="@style/TextAppearance.AppCompat.Medium"/>
+
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat Stasiun"
+            android:padding="6dp"
+            android:justificationMode="inter_word"
+            style="@style/TextAppearance.AppCompat.Medium"/>
+
+        <TextView
+            android:id="@+id/tv_koordinat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="koordinat Stasiun"
+            android:padding="6dp"
+            android:justificationMode="inter_word"
+            style="@style/TextAppearance.AppCompat.Medium"/>
+
+        <Button
+            android:id="@+id/btn_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buka Lokasi"/>
 
 
 

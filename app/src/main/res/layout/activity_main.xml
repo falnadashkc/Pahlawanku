@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#D53A3A3A">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_pahlawan"
+        android:id="@+id/rv_stasiun"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_card"/>

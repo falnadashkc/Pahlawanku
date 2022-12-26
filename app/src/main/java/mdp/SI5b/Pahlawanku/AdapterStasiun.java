@@ -15,47 +15,53 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class AdapterStasiun extends RecyclerView.Adapter<AdapterStasiun.VHPahlawan> {
-    private ArrayList<ModelStasiun> dataPahlawan;
+public class AdapterStasiun extends RecyclerView.Adapter<AdapterStasiun.VHStasiun> {
+    private ArrayList<ModelStasiun> dataStasiun;
     private Context ctx;
 
-    public AdapterStasiun(ArrayList<ModelStasiun> dataPahlawan, Context ctx) {
-        this.dataPahlawan = dataPahlawan;
+    public AdapterStasiun(ArrayList<ModelStasiun> dataStasiun, Context ctx) {
+        this.dataStasiun = dataStasiun;
         this.ctx = ctx;
     }
 
     @NonNull
     @Override
-    public VHPahlawan onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public VHStasiun onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View VW = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
-        return new VHPahlawan(VW);
+        return new VHStasiun(VW);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VHPahlawan holder, int position) {
-        ModelStasiun pahlawan = dataPahlawan.get(position);
+    public void onBindViewHolder(@NonNull VHStasiun holder, int position) {
+        ModelStasiun Stasiun = dataStasiun.get(position);
 
-        holder.tvNama.setText(pahlawan.getNama());
-        holder.tvTentang.setText(pahlawan.getTentang());
+        holder.tvNama.setText(Stasiun.getNama());
+        holder.tvTentang.setText(Stasiun.getTentang());
+        holder.tvAlamat.setText(Stasiun.getAlamat());
+        holder.tvKoordinat.setText(Stasiun.getKoordinat());
 
         Glide
                 .with(ctx)
-                .load(pahlawan.getFoto())
+                .load(Stasiun.getFoto())
                 .centerCrop()
                 .into(holder.ivFoto);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String xNama, xTentang, xfoto;
-                xNama = pahlawan.getNama();
-                xTentang = pahlawan.getTentang();
-                xfoto = pahlawan.getFoto();
+                String xNama, xTentang, xfoto, xalamat, xkoordinat;
+                xNama = Stasiun.getNama();
+                xTentang = Stasiun.getTentang();
+                xfoto = Stasiun.getFoto();
+                xalamat = Stasiun.getAlamat();
+                xkoordinat = Stasiun.getKoordinat();
 
                 Intent kirim = new Intent(ctx, DetailActivity.class);
                 kirim.putExtra("xNama", xNama);
                 kirim.putExtra("xTentang", xTentang);
                 kirim.putExtra("xFoto", xfoto);
+                kirim.putExtra("xAlamat", xalamat);
+                kirim.putExtra("xKoordinat", xkoordinat);
                 ctx.startActivity(kirim);
             }
         });
@@ -63,18 +69,21 @@ public class AdapterStasiun extends RecyclerView.Adapter<AdapterStasiun.VHPahlaw
 
     @Override
     public int getItemCount() {
-        return dataPahlawan.size();
+        return dataStasiun.size();
     }
 
-    public class VHPahlawan extends RecyclerView.ViewHolder {
-        TextView tvNama, tvTentang;
+    public class VHStasiun extends RecyclerView.ViewHolder {
+        TextView tvNama, tvTentang, tvAlamat, tvKoordinat;
         ImageView ivFoto;
 
-        public VHPahlawan(@NonNull View itemView) {
+        public VHStasiun(@NonNull View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tv_nama);
             tvTentang = itemView.findViewById(R.id.tv_tentang);
             ivFoto = itemView.findViewById(R.id.iv_foto);
+            tvAlamat = itemView.findViewById(R.id.tv_alamat);
+            tvKoordinat = itemView.findViewById(R.id.tv_koordinat);
+
         }
     }
 }

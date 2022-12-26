@@ -9,16 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="6dp"
-        android:background="#2DF10404">
+        android:background="#03fcd3">
+
 
         <ImageView
             android:id="@+id/iv_foto"
-            android:layout_width="75dp"
+            android:layout_width="386dp"
             android:layout_height="100dp"
-            android:src="@drawable/duck"
             android:scaleType="centerCrop"
-            android:layout_marginRight="6dp"/>
-
+            android:src="@drawable/duck"
+            android:layout_alignParentTop="true"/>
 
         <TextView
             android:id="@+id/tv_nama"
@@ -27,16 +27,32 @@
             android:text="Nama stasiun"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/iv_foto"/>
+            android:layout_below="@+id/iv_foto"
+            />
 
         <TextView
             android:id="@+id/tv_tentang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tentang stasiun"
-            android:layout_toRightOf="@id/iv_foto"
             android:layout_below="@id/tv_nama"
-            android:maxLines="4"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="alamat stasiun"
+            android:layout_below="@id/tv_tentang"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_koordinat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="koordinat stasiun"
+            android:layout_below="@id/tv_alamat"
             android:ellipsize="end"/>
 
     </RelativeLayout>

@@ -16,11 +16,10 @@
         android:textSize="21sp"/>
 
     <ImageView
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src='@drawable/duar'
+        android:layout_width="320px"
+        android:layout_height="320px"
+        android:src="@drawable/duar"
         android:layout_above="@+id/txt_about"
         android:layout_centerInParent="true"/>
-
 
 </RelativeLayout>

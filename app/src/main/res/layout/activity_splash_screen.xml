@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    tools:context=".SplashScreen"
+    android:background="@drawable/pinkwhites">
 
 
     <ImageView
         android:id="@+id/bongo"
         android:layout_width="500px"
         android:layout_height="500px"
-        android:src="@drawable/bongocat"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:src="@drawable/bongocat" />
 
     <TextView
         android:layout_width="wrap_content"

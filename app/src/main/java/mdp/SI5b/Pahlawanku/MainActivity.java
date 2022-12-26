@@ -1,19 +1,24 @@
 package mdp.SI5b.Pahlawanku;
 
+import static mdp.SI5b.Pahlawanku.R.color.lagoon;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rvPahlawan;
+//    Button btnlokasi;
+    private RecyclerView rvStasiun;
     private ArrayList<ModelStasiun> data = new ArrayList<>();
 
 
@@ -22,18 +27,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvPahlawan = findViewById(R.id.rv_pahlawan);
-        rvPahlawan.setHasFixedSize(true);
+//        btnlokasi = findViewById(R.id.btn_lokasi);
+        rvStasiun = findViewById(R.id.rv_stasiun);
+        rvStasiun.setHasFixedSize(true);
 
-        data.addAll(DataStasiun.ambilDataPahlawan());
-        tampilDataPahlawan();
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(lagoon)));
+
+        data.addAll(DataStasiun.ambilDataStasiun());
+        tampilDataStasiun();
     }
 
-    private void  tampilDataPahlawan(){
+    private void  tampilDataStasiun(){
         AdapterStasiun AP = new AdapterStasiun(data, MainActivity.this);
 
-        rvPahlawan.setLayoutManager(new LinearLayoutManager(this));
-        rvPahlawan.setAdapter(AP);
+        rvStasiun.setLayoutManager(new LinearLayoutManager(this));
+        rvStasiun.setAdapter(AP);
     }
 
     @Override

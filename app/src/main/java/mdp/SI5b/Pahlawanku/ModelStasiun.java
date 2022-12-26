@@ -1,7 +1,7 @@
 package mdp.SI5b.Pahlawanku;
 
 public class ModelStasiun {
-    private String nama, tentang, foto;
+    private String nama, tentang, foto, alamat, koordinat;
 
     public String getNama() {
         return nama;
@@ -26,4 +26,14 @@ public class ModelStasiun {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+    public String getAlamat() {return alamat;}
+
+    public void setAlamat(String alamat) {this.alamat = alamat;}
+
+    public String getKoordinat() {return koordinat;}
+
+    public void setKoordinat(String koordinat) {this.koordinat = koordinat;}
+
+
 }
