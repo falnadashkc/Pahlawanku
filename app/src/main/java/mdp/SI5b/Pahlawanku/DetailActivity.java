@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getColor(lagoon)));
+
 
         ivFoto = findViewById(R.id.iv_foto);
         tvNama = findViewById(R.id.tv_nama);
