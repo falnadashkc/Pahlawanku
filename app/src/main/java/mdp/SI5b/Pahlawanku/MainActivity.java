@@ -17,7 +17,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-//    Button btnlokasi;
+
     private RecyclerView rvStasiun;
     private ArrayList<ModelStasiun> data = new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        btnlokasi = findViewById(R.id.btn_lokasi);
+//
         rvStasiun = findViewById(R.id.rv_stasiun);
         rvStasiun.setHasFixedSize(true);
 
